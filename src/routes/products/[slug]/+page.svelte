@@ -5,7 +5,7 @@
 
 	// this data comes from the function in `+page.server.js`, which runs on the server only
 	export let data;
-
+	console.log(data);
 	// we want to show unpublished content when in preview mode.
 	// const canShowContent = data.content || isPreviewing();
 </script>
@@ -15,13 +15,9 @@
 </svelte:head>
 
 <main>
-	<h1>Product Description Page:</h1>
-	<!-- {#if canShowContent} -->
-		<div>Product Name: {data.content?.data?.name || 'Unpublished'}</div>
-		<div>Product Description: {data.content?.data?.description || 'Unpublished'}</div>
-	<!-- {:else}
-		Content Not Found
-	{/if} -->
+	<h1>Product Description Page</h1>
+	<div>Product Name: {data.content?.data?.name || 'Unpublished'}</div>
+	<div>Product Description: {data.content?.data?.description || 'Unpublished'}</div>
 </main>
 
 <footer>
