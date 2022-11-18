@@ -5,7 +5,7 @@
 
 	// this data comes from the function in `+page.server.js`, which runs on the server only
 	export let data;
-	console.log(data);
+	console.log(data.content?.data?.slug);
 	// we want to show unpublished content when in preview mode.
 	// const canShowContent = data.content || isPreviewing();
 </script>
@@ -16,8 +16,12 @@
 
 <main>
 	<h1>Product Description Page</h1>
-	<div>Product Name: {data.content?.data?.name || 'Unpublished'}</div>
-	<div>Product Description: {data.content?.data?.description || 'Unpublished'}</div>
+	{#if !data.content?.data?.slug}
+		<div>Enter a slug to preview product</div>
+	{:else}
+		<div>Product Name: {data.content?.data?.name || 'Unpublished'}</div>
+		<div>Product Description: {data.content?.data?.description || 'Unpublished'}</div>
+	{/if}
 </main>
 
 <footer>
