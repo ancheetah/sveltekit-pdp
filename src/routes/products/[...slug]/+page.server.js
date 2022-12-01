@@ -3,8 +3,8 @@ import { BUILDER_PUBLIC_API_KEY } from '../../../apiKey';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load(event) {
+	// Get current path
 	let slug = /[^/]*$/.exec(event.url.pathname)[0];
-	console.log(slug);
 	
 	// fetch your Builder content
 	const content = await getContent({

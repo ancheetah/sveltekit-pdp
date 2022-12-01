@@ -1,13 +1,6 @@
 <script>
-	// import Counter from '../../lib/Counter.svelte';
-	// import { isPreviewing, RenderContent } from '@builder.io/sdk-svelte';
-	// import { BUILDER_PUBLIC_API_KEY } from '../../apiKey';
-
 	// this data comes from the function in `+page.server.js`, which runs on the server only
 	export let data;
-	console.log(data.content?.data?.slug);
-	// we want to show unpublished content when in preview mode.
-	// const canShowContent = data.content || isPreviewing();
 </script>
 
 <svelte:head>
